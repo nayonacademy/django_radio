@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form action="" method="POST">
+    {% csrf_token %}
+        Name :
+        {{ form.name }} <br>
+
+    {% for n in cls %}
+         <input type="radio" name="color" value="{{ n.id }}" checked> {{ n }}<br>
+    {% endfor %}
+        <input type="submit">
+    </form>
+{% endblock content %}
